@@ -3,7 +3,8 @@
 
 using String = std::string;
 
-// The "new" keyword in C++
+// "new" keyword in C++
+// The new keyword does two things, it allocates memory and it calls the constructor
 
 class Entity
 {
@@ -23,7 +24,7 @@ int main()
     int *a = new int;     // single 4byte int stored on the heap
     int *b = new int[50]; // designating 200 bytes by using a size 50 array
 
-    Entity *e = new Entity[50]; // new heap allocation using the Entity
+    Entity *e = new Entity(); // new heap allocation using the Entity
 
     std::cin.get();
 }
