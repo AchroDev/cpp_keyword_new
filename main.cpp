@@ -19,6 +19,11 @@ public:
 
 int main()
 {
+    int a = 2;            // stored on the stack
+    int *a = new int;     // single 4byte int stored on the heap
+    int *b = new int[50]; // designating 200 bytes by using a size 50 array
+
+    Entity *e = new Entity[50]; // new heap allocation using the Entity
 
     std::cin.get();
 }
