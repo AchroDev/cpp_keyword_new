@@ -21,10 +21,16 @@ public:
 int main()
 {
     int a = 2;            // stored on the stack
-    int *a = new int;     // single 4byte int stored on the heap
+    int *a2 = new int;    // single 4byte int stored on the heap
     int *b = new int[50]; // designating 200 bytes by using a size 50 array
 
-    Entity *e = new Entity(); // new heap allocation using the Entity
+    Entity *e = new Entity();                     // new heap allocation using the Entity
+    Entity *e = (Entity *)malloc(sizeof(Entity)); // This line of code is essentially doing the same thing as the above line, except it doesn't call the constructor
+
+    delete a2;
+    free(a2); // Like above with 'malloc', delete calls the C function free() to free the memory. Except it doesn't call the deconstructor
+    delete b;
+    delete e;
 
     std::cin.get();
 }
