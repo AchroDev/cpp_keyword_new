@@ -28,8 +28,8 @@ int main()
     Entity *e = (Entity *)malloc(sizeof(Entity)); // This line of code is essentially doing the same thing as the above line, except it doesn't call the constructor
 
     delete a2;
-    free(a2); // Like above with 'malloc', delete calls the C function free() to free the memory. Except it doesn't call the deconstructor
-    delete b;
+    free(a2);   // Like above with 'malloc', delete calls the C function free() to free the memory. Except it doesn't call the deconstructor
+    delete[] b; // If you call a "new" instance with [] then you must delete with the brackets as well.
     delete e;
 
     std::cin.get();
